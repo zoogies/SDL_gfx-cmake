@@ -1,3 +1,23 @@
+
+# SDL_gfx-cmake
+
+This is a fork of <https://github.com/ferzkopp/SDL_gfx> which applies a [modified version](https://github.com/ferzkopp/SDL_gfx/pull/6) of the `SDL_gfx-SDL2.patch`.
+
+## Example Usage with CMake
+
+```txt
+FetchContent_Declare(
+  SDL_gfx
+  GIT_REPOSITORY https://github.com/zoogies/SDL_gfx-cmake
+  GIT_PROGRESS TRUE
+)
+FetchContent_MakeAvailable(SDL_gfx)
+target_include_directories(YOUR_TARGET_HERE PUBLIC ${SDL_gfx_SOURCE_DIR})
+```
+
+## Original README
+
+```txt
 /*!
 
 
@@ -511,3 +531,4 @@ See the source code .c files for some sample code and implementation hints.
 \verbinclude ChangeLog
 
 */
+```
