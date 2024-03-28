@@ -2,16 +2,20 @@
 # SDL_gfx-cmake
 
 This is a fork of <https://github.com/ferzkopp/SDL_gfx> which applies a [modified version](https://github.com/ferzkopp/SDL_gfx/pull/6) of the `SDL_gfx-SDL2.patch`.
+I've gone ahead and just wrote my own CMakeLists.txt, as the one provided in the patch is broken.
 
 ## Example Usage with CMake
 
-```txt
+Be aware that the CMakeLists.txt that I crafted does not identify SDL2's headers on its own, so it is *ESSENTIAL* that you include SDL2's headers onto the SDL_gfx target.
+
+```cmake
 FetchContent_Declare(
   SDL_gfx
   GIT_REPOSITORY https://github.com/zoogies/SDL_gfx-cmake
   GIT_PROGRESS TRUE
 )
 FetchContent_MakeAvailable(SDL_gfx)
+target_include_directories(SDL_gfx PUBLIC ${SDL2_SOURCE_DIR}/include) # REPLACE WITH YOUR SDL2 HEADER LOCATION
 target_include_directories(YOUR_TARGET_HERE PUBLIC ${SDL_gfx_SOURCE_DIR})
 ```
 

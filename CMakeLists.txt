@@ -1,26 +1,24 @@
-cmake_minimum_required (VERSION 2.8)
-project (SDL_gfx)
-set (SDL_gfx_VERSION_MAJOR 3)
-set (SDL_gfx_VERSION_MINOR 0)
+cmake_minimum_required(VERSION 3.16)
 
-set (CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules")
-find_package (SDL2 REQUIRED)
+set(MAJOR_VERSION 2)
+set(MINOR_VERSION 0)
+set(MICRO_VERSION 27)
 
-include_directories (
-	"${SDL2_INCLUDE_DIR}"
-	)
+project(SDL_gfx
+    LANGUAGES C
+)
 
-file(GLOB SOURCE_FILES ${CMAKE_SOURCE_DIR}/*.c)
-file(GLOB INCLUDE_FILES ${CMAKE_SOURCE_DIR}/*.h)
+message(STATUS "Configuring ${PROJECT_NAME} ${PROJECT_VERSION}")
 
-add_library (SDL_gfx SHARED
-	${SOURCE_FILES}
-	${INCLUDE_FILES}
-	)
+add_library(SDL_gfx STATIC
+    SDL_framerate.c
+    SDL_gfxBlitFunc.c
+    SDL_gfxPrimitives.c
+    SDL_imageFilter.c
+    SDL_rotozoom.c
+)
 
-target_link_libraries (SDL_gfx
-	${SDL2_LIBRARY}
-	)
-
-install (TARGETS SDL_gfx DESTINATION lib)
-install (FILES ${INCLUDE_FILES} DESTINATION include/SDL)
+target_include_directories(SDL_gfx
+    PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}
+)
