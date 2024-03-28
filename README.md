@@ -1,8 +1,11 @@
 
 # SDL_gfx-cmake
 
-This is a fork of <https://github.com/ferzkopp/SDL_gfx> which applies a [modified version](https://github.com/ferzkopp/SDL_gfx/pull/6) of the `SDL_gfx-SDL2.patch`.
-I've gone ahead and just wrote my own CMakeLists.txt, as the one provided in the patch is broken.
+This is an SDL2 fork of <https://github.com/ferzkopp/SDL_gfx>, which applies a [modified version](https://github.com/ferzkopp/SDL_gfx/pull/6) of the `SDL_gfx-SDL2.patch`.
+
+In addition to that, I've written my own CMakeLists.txt, as the one provided in the patch is broken.
+
+I've also modified the source to reflect new features and changes introduced in the repo <https://github.com/rtrussell/BBCSDL>.
 
 ## Example Usage with CMake
 

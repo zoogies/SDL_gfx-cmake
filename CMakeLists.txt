@@ -13,9 +13,9 @@ message(STATUS "Configuring ${PROJECT_NAME} ${PROJECT_VERSION}")
 add_library(SDL_gfx STATIC
     SDL_framerate.c
     SDL_gfxBlitFunc.c
-    SDL_gfxPrimitives.c
     SDL_imageFilter.c
-    SDL_rotozoom.c
+    SDL2_gfxPrimitives.c
+    SDL2_rotozoom.c
 )
 
 target_include_directories(SDL_gfx
