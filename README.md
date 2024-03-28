@@ -1,3 +1,14 @@
+
+# SDL_gfx-cmake
+
+This is a fork of <https://github.com/ferzkopp/SDL_gfx> that adds CMake support.
+I have never used autoconf and am not sure how the typical build process works for this lib, so I've just gone ahead and written a CMakeLists.txt that suits my needs as far as compiling the source.
+
+This is ***NOT*** a perfectly exact port of the original library with a CMake install target, as I might strip some functionality and modify the source in order to get it to play nice.
+
+## Original README
+
+```txt
 /*!
 
 
@@ -511,3 +522,4 @@ See the source code .c files for some sample code and implementation hints.
 \verbinclude ChangeLog
 
 */
+```
